@@ -27,11 +27,11 @@ fun main() {
     val calculator = Calculator()
 
     val num1 = readLine()?.trim()?.toDoubleOrNull()
-    val operator = readLine()?.trim()?.singleOrNull()
+    val basicOp = readLine()?.trim()?.singleOrNull()
     val num2 = readLine()?.trim()?.toDoubleOrNull()
 
-    if (num1 != null && operator != null && num2 != null) {
-        when (operator) {
+    if (num1 != null && basicOp != null && num2 != null) {
+        when (basicOp) {
             '+' -> println(calculator.add(num1, num2))
             '-' -> println(calculator.subtract(num1, num2))
             '*' -> println(calculator.multiply(num1, num2))

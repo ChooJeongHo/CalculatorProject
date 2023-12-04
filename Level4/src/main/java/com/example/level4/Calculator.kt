@@ -10,22 +10,22 @@ fun main() {
     val calculator = Calculator()
 
     var num1: Double?
-    var operator: Char?
+    var basicOp: Char?
     var num2: Double?
 
     do {
         num1 = readLine()?.trim()?.toDoubleOrNull()
-        operator = readLine()?.trim()?.singleOrNull()
+        basicOp = readLine()?.trim()?.singleOrNull()
         num2 = readLine()?.trim()?.toDoubleOrNull()
 
-        if (num1 == null || operator == null || num2 == null) {
+        if (num1 == null || basicOp == null || num2 == null) {
             println("잘못된 입력입니다. 입력을 다시 확인해주세요.")
             // 입력 다시 받기
             readLine()?.trim()?.toDoubleOrNull()
             readLine()?.trim()?.singleOrNull()
             readLine()?.trim()?.toDoubleOrNull()
         } else {
-            when (operator) {
+            when (basicOp) {
                 '+' -> println("$num1 + $num2 = ${calculator.calculate(num1, num2, AddOperation())}입니다.")
                 '-' -> println("$num1 - $num2 = ${calculator.calculate(num1, num2, SubtractOperation())}입니다.")
                 '*' -> println("$num1 * $num2 = ${calculator.calculate(num1, num2, MultiplyOperation())}입니다.")
